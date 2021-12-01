@@ -29,10 +29,10 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.REPOSITORY }}:7.4
 
-      - name: Build and Push (8)
+      - name: Build and Push (8.1)
         uses: docker/build-push-action@v2
         with:
-          context: ./php8-fpm
-          file: ./php8-fpm/Dockerfile
+          context: ./php8.1-fpm
+          file: ./php8.1-fpm/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.REPOSITORY }}:8
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.REPOSITORY }}:8.1
