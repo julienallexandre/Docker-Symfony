@@ -18,5 +18,6 @@ RUN echo "short_open_tag = Off" > $PHP_INI_DIR/php.ini
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-RUN wget https://get.symfony.com/cli/installer -O - | bash && \
-    mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sources.list.d/symfony-cli.list && \
+    apt update && \
+    apt install symfony-cli
